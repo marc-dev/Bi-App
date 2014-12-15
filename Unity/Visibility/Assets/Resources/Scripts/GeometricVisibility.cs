@@ -56,6 +56,32 @@ public class GeometricVisibility : MonoBehaviour
 		//corresponding Transform to recalc vertices in WorldCoordinates if needed
 		public Transform transform;
 	}
+
+	private struct Segement 
+	{
+		public Vector2 a;
+		public Vector2 b;
+
+		public Segement(Vector2 pA, Vector2 pB)
+		{
+			this.a = pA;
+			this.b = pB;
+		}
+
+		public Segement(Vector3 pA, Vector3 pB)
+		{
+			//Working in Ray2D with axes X, Z
+			this.a.x = pA.x;
+			this.a.y = pA.z;
+			this.b.x = pB.x;
+			this.b.y = pB.z;
+		}
+
+		public string ToString()
+		{
+						return "a [" + this.a.x + ", " + this.a.x + "]" + "  b[" + this.b.x + ", " + this.b.y + "]"; 
+		}
+	}
 	
 	#endregion
 	
@@ -98,11 +124,19 @@ public class GeometricVisibility : MonoBehaviour
 	}
 	#endregion
 
-	private Vector2 myAlgoTest(Vector2 ray, Vector2 segment)
+	private void drawSegment()
 	{
-		//
+		for (int i = 0; i < 12; i++)
+		{
 
-		//Ray(a,b) Segment(A,B)
+		}
+	}
+
+
+	private Vector2 myAlgoTest(Segement ray, Segement segment)
+	{
+		
+	
 		/*
 		 * 
 		 *		Point + Direction * T
@@ -137,15 +171,21 @@ public class GeometricVisibility : MonoBehaviour
 		 * 
 		 */
 
-
+		Vector2 ret = new Vector2 (int.MinValue, int.MaxValue);
 
 		// RAY in parametric: Point + Delta*T1
-		Vector2 rayPoint = new Vector2(ray.x, ray.y); 
-		Vector2 rayDistance = new Vector2(ray.x - ray.x, ray.y - ray.y);
+		Vector2 rayPoint = new Vector2(ray.b.x, ray.b.y); 
+		Vector2 rayDistance = new Vector2(ray.b.x - ray.a.x, ray.b.y - ray.a.y);
 
 		// SEGMENT in parametric: Point + Delta*T2
-		Vector2 segmentPoint = new Vector2(segment.x, segment.y); 
-		Vector2 segmentDistance = new Vector2(segment.x - segment.x, segment.y - segment.y);
+		Vector2 segmentPoint = new Vector2(segment.a.x, segment.a.y); 
+		Vector2 segmentDistance = new Vector2(segment.b.x - segment.a.x, segment.b.y - segment.a.y);
+
+
+		Debug.Log ("!!!!!!!!!!!!!!!!!!!! segmentDistance = " + segment.ToString()); 
+
+	//	Debug.Log ("in my function " + segmentPoint + " _ "+ rayPoint);
+
 
 		//Check if they're parallel
 		float rayMag = Mathf.Sqrt (rayDistance.x * rayDistance.x + rayDistance.y * rayDistance.y);   
@@ -154,25 +194,26 @@ public class GeometricVisibility : MonoBehaviour
 		//float segMag = segmentDistance.x + segmentDistance.y;
 		if (rayDistance.x / rayMag == segmentDistance.x / segMag && rayDistance.y / rayMag == segmentDistance.y / segMag) 
 		{
+			Debug.Log("Parallel case");
 			//they're parallel
 			return new Vector2(int.MinValue, int.MinValue);
 		}
 
 
-		Vector3 segmentIntersec = new Vector3 ();
+		float calcuVal =  (segmentDistance.x * rayDistance.y - segmentDistance.y * rayDistance.x);
 		float t1 = 0, t2 = 0;
 
 
+		t2 = (rayDistance.x * (segmentPoint.y - rayPoint.x) + rayDistance.y * (rayPoint.x - segmentPoint.x)) / (segmentDistance.x * rayDistance.y - segmentDistance.y * rayDistance.x); ///(s_dx*r_dy - s_dy*r_dx);
+		t1 = (segmentPoint.x + segmentDistance.x * t2 - rayPoint.x) / rayDistance.x;
 
 
-		if (t1 > 0 && t2 > 0 && t2 < 1) 
-		{
-			return new Vector2(1 , 1);
+		if (t1 < 0 || t2 < 0 || t2 > 1)	return ret;
+
+
+		Debug.Log("Intersect found");
+		return new Vector2(rayPoint.x + rayDistance.x * t1 , rayPoint.y + rayDistance.y * t1);
 			//Yeah we  found an intersect ! 
-		}
-
-		return new Vector2(int.MinValue, int.MinValue);
-
 	}
 
 
@@ -183,12 +224,39 @@ public class GeometricVisibility : MonoBehaviour
 
 	private	void DrawLineToVertices(ref BottomPolygon[] poly)
 	{
-		for(int ip = 0; ip < poly.Length; ip++){	//polygon
+		
+		Vector3 firstVert = new Vector3 ();
+		Vector2 endPos1 = new Vector2 ();
+		Segement ray;
+		Segement segement;
+		Vector3 endPos;
+
+		for(int ip = 0; ip < poly.Length; ip++)
+		{	//polygon
 			for(int iv = 0; iv < poly[ip].vertices.Length; iv++)
-			{	//vertices of the polygon
+			{	
+				//vertices of the polygon
 				Color color = new Color(0F,0.5F,1F,1F);
 				if(iv != 0){color = colors[iv%4];}
 				Debug.DrawLine(player.transform.position, poly[ip].vertices[iv], color, 0F, false);
+
+				Debug.Log("verticezs "+ poly[ip].vertices[iv]+ " "+poly.Length+" "+poly[ip].vertices.Length);
+			
+				if (iv == poly[ip].vertices.Length - 1)
+					firstVert = poly[ip].vertices[0];
+				else
+					firstVert = poly[ip].vertices[iv];
+			
+
+				ray = new Segement (player.transform.position, source.position);
+				segement = new Segement (poly[ip].vertices[iv], firstVert);
+			
+				endPos1 =  myAlgoTest(ray, segement);
+				endPos = new Vector3(endPos1.x, 0, endPos1.y);
+//				Debug.Log ("OUT endPos " + poly[ip].vertices[iv] + " _ "+ source.position+ " _ "+ endPos);
+
+				if (endPos.x != int.MinValue && endPos.y !=int.MaxValue)
+					Debug.DrawLine(player.transform.position, endPos, Color.red, 0F, false);
 			}
 		}
 		Debug.DrawLine(player.transform.position, source.position, Color.yellow, 0F, false);
@@ -256,14 +324,12 @@ public class GeometricVisibility : MonoBehaviour
 	{
 		//Table of polygones
 		poly = new BottomPolygon[walls.Length];
-Debug.Log (" Nb poly (Wall)" + poly.Length);
 		int iPoly = 0;	//polygon integrator
 		int cpt = 0;
 
 		foreach(GameObject wall in walls)
 		{
 			cpt ++;
-Debug.Log( "--------------wall : " + cpt);
 			//Save Transform reference
 			poly[iPoly].transform = wall.transform;
 			
@@ -511,7 +577,8 @@ Debug.Log( "--------------wall : " + cpt);
 	}
 	
 	//checking order of vertices via angle sum
-	private	void FixCCWOrder(ref List<Vector3> vertices){
+	private	void FixCCWOrder(ref List<Vector3> vertices)
+	{
 		//the list could be CW instead of CCW, check it by checking angle sum
 		//→inner angles is always smaller than outer angles
 		float angleSumInc = 0F;	//the angleSum of the polygon in one direction
@@ -540,10 +607,12 @@ Debug.Log( "--------------wall : " + cpt);
 	}
 	
 	//same as above but for arrays rather than lists
-	private	Vector3[] FixCCWOrder(Vector3[] vertices){
+	private	Vector3[] FixCCWOrder(Vector3[] vertices)
+	{
 		float angleSumInc = 0F;
 		float angleSumDec = 0F;
-		for(int iV = 0; iV<vertices.Length; iV++){
+		for(int iV = 0; iV<vertices.Length; iV++)
+		{
 			int nV	= (iV+1)%vertices.Length;
 			int nV2	= (iV+2)%vertices.Length;
 			Vector3 dir1 = (vertices[iV] -vertices[nV]);
@@ -580,7 +649,8 @@ Debug.Log( "--------------wall : " + cpt);
 	
 	#region RANDOM POLYGON
 	
-	private	void CreateRandomPolygon(ref BottomPolygon[] poly){
+	private	void CreateRandomPolygon(ref BottomPolygon[] poly)
+	{
 		BottomPolygon[] enlargedArray = new BottomPolygon[poly.Length+1];
 		//just a quick and dirty distorted circle... = simple polygon, convex or concave possible
 		int edgeCount = Random.Range(3,20);
