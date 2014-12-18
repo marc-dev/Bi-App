@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
+
 
 //Y = 0 cause we are in 2D
 //Axes : X, Z
@@ -8,15 +10,12 @@ using System;
 
 public class TestAlgo : MonoBehaviour 
 {
-	Vector3 a;
+	Vector3 playerPosition;
 	Vector3 pointIntersection;
 	Vector3 mousePosition;
 	
 	private bool playerMove;
 	private Vector3[] endPoints;
-
-	//Vector3 c;
-	//Vector3 d;
 
 	Segment [] segments;
 	Color colorSegement = Color.red;
@@ -25,19 +24,21 @@ public class TestAlgo : MonoBehaviour
 	public bool IntersectionParametrique;
 	public int nbSegments;
 	public int rayon;
+	public int distanceMaxWall = 20;
 
 	private bool _algoReady = false;
+	
+	
+	public int nbRay;
+	private Vector3[] rays;
+	float [] angles;
+
+
 
 	// Use this for initialization
 	void Start () 
 	{
-		a.x = 1;
-		a.z = 2; 
 
-		pointIntersection.x = 5;
-		pointIntersection.z = 7;
-
-	
 		createSegment ();
 		createRay ();
 		_algoReady = true;
@@ -56,14 +57,12 @@ public class TestAlgo : MonoBehaviour
 
 	void createSegment()
 	{
-		//2 points per segment
 		segments = new Segment[nbSegments];
 
 		for (int i = 0; i < nbSegments ; i++) 
 		{
 			Segment seg = new Segment();
-			segments[i] = seg.randomSegment(20);
-
+			segments[i] = seg.randomSegment(distanceMaxWall);
 		}
 	}
 
@@ -73,7 +72,7 @@ public class TestAlgo : MonoBehaviour
 	}
 
 	//para : 2 points of the segment
-	float coefDir(Vector3 pA, Vector3 pB)
+	float slop(Vector3 pA, Vector3 pB)
 	{
 		//Calcul de la pente
 		float pente =  (pB.z - pA.z )/ (pB.x - pA.x);
@@ -91,22 +90,15 @@ public class TestAlgo : MonoBehaviour
 	//Calcul intersection with cartesiennes method
 	void startIntersecCartesiennes(Segment seg)
 	{
-		float pente1 = coefDir (a, mousePosition);
-		float pente2 = coefDir (seg.pointA, seg.pointB);
-		float constante1 = constante (a, pente1);
+		float pente1 = slop (playerPosition, mousePosition);
+		float pente2 = slop (seg.pointA, seg.pointB);
+		float constante1 = constante (playerPosition, pente1);
 		float constante2 = constante (seg.pointA, pente2);
 		Vector3 intersec = new Vector3 ();
 		//y = ax+b
 
 		if (pente1 != pente2)
 		{
-			//Pente non parallèle
-
-			//Calcul du point d'intersection
-			//a* x + b -(a2 * x + b2) = 0;
-
-			//X = point d'intersection
-
 			pointIntersection.x = (constante2 - constante1) / (pente1  - pente2);
 			pointIntersection.z =  pente1 * intersec.x + constante1;
 
@@ -121,40 +113,7 @@ public class TestAlgo : MonoBehaviour
 
 	}
 
-	bool startIntersecParametrique (Segment seg)
-	{
 
-		Vector2 I= new Vector2 ();
-		Vector2	J = new Vector2 ();
-	
-		float m, k;
-
-		I = transformPointsToVector (a, mousePosition);
-		J = transformPointsToVector(seg.pointA, seg.pointB);
-
-		m = -(-I.x * a.z + I.x * seg.pointA.z + I.y * a.x - I.y * seg.pointA.x) / (I.x * J.y - I.y * J.x);
-		k = -(a.x * J.y - seg.pointA.x * J.y - J.x * a.z + J.x * seg.pointA.z) / (I.x * J.y - I.y * J.x);
-
-		if (I.x * J.y - I.y * J.x == 0) 
-		{
-			Debug.Log("Parallel case");
-			return false;
-		}
-
-		if (m > 0 && m < 1 && k > 0 && k < 1) 
-		{
-			pointIntersection.x = a.x + k * I.x;
-			pointIntersection.z =  a.z + k * I.y;
-			colorSegement = Color.red;
-			return true;
-
-		}
-		else
-			colorSegement = Color.yellow;
-
-		return false;
-
-	}
 
 
 	private void getPositionMouseAndPlayer()
@@ -165,10 +124,10 @@ public class TestAlgo : MonoBehaviour
 			Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hit);
 
 			playerMove = false;
-			if (a.x != this.gameObject.transform.position.x || a.z != this.gameObject.transform.position.z)
+			if (playerPosition.x != this.gameObject.transform.position.x || playerPosition.z != this.gameObject.transform.position.z)
 		 	{
-				a.x = this.gameObject.transform.position.x;
-			    a.z = this.gameObject.transform.position.z;
+				playerPosition.x = this.gameObject.transform.position.x;
+				playerPosition.z = this.gameObject.transform.position.z;
 				playerMove = true;
 			}
 			if (mousePosition.x != hit.point.x || mousePosition.z != hit.point.z)
@@ -178,92 +137,137 @@ public class TestAlgo : MonoBehaviour
 				playerMove = true;
 			}
 
-			if (playerMove)
-			    lookingForIntersection();
+			//if (playerMove)
+			  //  lookingForIntersection();
 		}
 
-	}
-
-	private void lookingForIntersection()
-	{
-
-		for (int i = 0; i < nbSegments; i++)
-		{
-			if (segments[i] != null)
-			{
-				if (IntersectionParametrique)
-				{
-					if (startIntersecParametrique (segments[i]))
-					{
-						break;
-					}
-					else
-					{
-						pointIntersection = mousePosition;
-					}
-				}
-				else
-					startIntersecCartesiennes (segments[i]);
-			}
-			else
-				Debug.Log("Segment null "+i);
-		}
 	}
 
 	private Vector3 cutSegment()
 	{
-		float slop = coefDir (a, mousePosition);
 		Vector3 ret = new Vector3 ();
 
 		//width player to mouse 
 		Vector3 newVec = new Vector3 ();
-		newVec.x = mousePosition.x - a.x;
+		newVec.x = mousePosition.x - playerPosition.x;
 		newVec.y = 0;
-		newVec.z = mousePosition.z - a.z;
+		newVec.z = mousePosition.z - playerPosition.z;
 
 		float angle = Mathf.Atan2(newVec.z, newVec.x);
 	
-		ret.x = a.x + rayon * Mathf.Cos(angle);
+		ret.x = playerPosition.x + rayon * Mathf.Cos(angle);
 		ret.y = 0;
-		ret.z = a.z + rayon * Mathf.Sin(angle);
+		ret.z = playerPosition.z + rayon * Mathf.Sin(angle);
 		return ret;
 	}
 
+	private Vector2 [] getUniquePoints()
+	{
+		Vector2 [] points = new Vector2[5]; 
+
+		return points;
+	}
+
+	private void getAngles()
+	{
+	}
+
+	Intersection startIntersecParametrique (Segment ray, Segment seg)
+	{
+	
+		Vector2 I= new Vector2 ();
+		Vector2	J = new Vector2 ();
+		
+		float m, k;
+		
+		I = transformPointsToVector (ray.pointA, ray.pointB);
+		J = transformPointsToVector(seg.pointA, seg.pointB);
+		
+		m = -(-I.x * ray.pointA.z + I.x * seg.pointA.z + I.y * ray.pointA.x - I.y * seg.pointA.x) / (I.x * J.y - I.y * J.x);
+		k = -(ray.pointA.x * J.y - seg.pointA.x * J.y - J.x * ray.pointA.z + J.x * seg.pointA.z) / (I.x * J.y - I.y * J.x);
+		
+		if (I.x * J.y - I.y * J.x == 0) 
+		{
+			return null;
+		}
+		
+		if (m > 0 && m < 1 && k > 0 && k < 1) 
+		{
+			pointIntersection.x = ray.pointA.x + k * I.x;
+			pointIntersection.z =  ray.pointA.z + k * I.y;
+			return new Intersection( new Segment(ray.pointA, pointIntersection), k);
+			
+			
+		}
+		return null;
+	}
 
 
 	private void drawLine()
 	{
-	//	Debug.DrawLine(	a, b, Color.yellow, 0F, false);
-	//	Debug.DrawLine(	c, d, Color.green, 0F, false);
+		Segment ray = new Segment();
+		Intersection closestIntersec = new Intersection ();
+		Intersection intersec = new Intersection ();
+		List <Intersection>  intersctionList = new List<Intersection> ();
+		List <int> testIndice = new List<int> ();
+		for (int i = 0; i < rays.Length; i++)
+		{
+			ray.pointA = playerPosition;
+			ray.pointB = rays[i];
+			//Find closeset intersection
+			closestIntersec = null;
+			for (int j = 0; j < segments.Length; j++)
+			{
+				intersec =  startIntersecParametrique(ray, segments[j]);
+				if (intersec == null)
+				{
+
+
+					//Debug.Log("pas ok");
+					continue;
+				}
+				if (closestIntersec == null || intersec.distance < closestIntersec.distance)
+				{
+					testIndice.Add (i);
+					closestIntersec = intersec;
+				}
+			}
+			intersctionList.Add (closestIntersec);
+		}
 
 		Vector3 endPoint = cutSegment();//pointIntersection;//
 
-		Debug.DrawLine(a, endPoint, colorSegement, 0f,false);
+
+		//DRAW !!!!!!!!!!!!!!!!
+
+		Debug.DrawLine(playerPosition, endPoint, Color.blue, 0f,false);
 
 		if (nbSegments >= 1)
 			for (int i = 0; i < nbSegments; i++)
 				Debug.DrawLine(	segments[i].pointA, segments[i].pointB, Color.green, 0F, false);
-				
-		if (nbRay >= 1)
-			for (int i = 0; i < nbRay; i++)
-				Debug.DrawLine(	a, rays[i], Color.white, 0F, false);
 
+		foreach (Intersection inter in intersctionList)
+		{
+			if (inter != null)
+				Debug.DrawLine(	playerPosition, inter.segment.pointB, Color.red, 0F, false);
+		}
 
+		for (int i = 0; i < rays.Length; i++) 
+		{	
+			if (!testIndice.Contains(i))
+				Debug.DrawLine (playerPosition, rays [i], Color.white, 0F, false);
+		}
 	}
 
 	private void updateRay()
 	{
 		for (int i = 0; i < nbRay; i++)
 		{
-			rays[i].x = a.x + rayon * Mathf.Cos(angles[i] * Mathf.PI / 180 ); 
+			rays[i].x = playerPosition.x + rayon * Mathf.Cos(angles[i] * Mathf.PI / 180 ); 
 			rays[i].y = 0;
-			rays[i].z = a.z + rayon * Mathf.Sin(angles[i] * Mathf.PI / 180); 
+			rays[i].z = playerPosition.z + rayon * Mathf.Sin(angles[i] * Mathf.PI / 180); 
 		}
 	}
-
-	public int nbRay;
-	private Vector3[] rays;
-	float [] angles;
 
 	private void createRay()
 	{
@@ -279,54 +283,18 @@ public class TestAlgo : MonoBehaviour
 
 		for (int i = 0; i < nbRay; i++)
 		{
-			rays[i].x = a.x + rayon * Mathf.Cos(angles[i]); 
+			rays[i].x = playerPosition.x + rayon * Mathf.Cos(angles[i]); 
 			rays[i].y = 0;
-			rays[i].z = a.z + rayon * Mathf.Sin(angles[i]); 
+			rays[i].z = playerPosition.z + rayon * Mathf.Sin(angles[i]); 
 		}
 		
 	}
 
-
-	#region utils
-	//Faire une méthode générique
 	private Vector2  transformPointsToVector (Vector3 p1, Vector3 p2)
 	{
 		return new Vector2 (p2.x - p1.x , p2.z - p1.z); 
 	}	
 
 
-	public class Segment
-	{
-		public Vector3 pointA;
-		public Vector3 pointB;
 
-		public Segment ()
-		{
-			pointA = new Vector3();
-			pointB = new Vector3();
-		}
-
-		public Segment (Vector3 a, Vector3 b)
-		{
-			pointA = a;
-			pointB = b;
-		}
-
-		public Segment randomSegment(int maxDist)
-		{
-			Vector2 espace = new Vector2(-90, 90);
-
-			pointA.x = UnityEngine.Random.Range (espace.x, espace.y);
-			pointA.y = 0; //Work in 2D
-			pointA.z = UnityEngine.Random.Range (espace.x, espace.y);
-
-			pointB.x = UnityEngine.Random.Range (pointA.x, pointA.x + maxDist);
-			pointB.y = 0; //Work in 2D
-			pointB.z = UnityEngine.Random.Range (pointA.z, pointA.z + maxDist);
-
-			return this;
-		}
-	}
-
-	#endregion
 }

@@ -18,7 +18,6 @@ public class GeometricVisibility : MonoBehaviour
 	#region VARIABLES
 	public GameObject player;
 	public bool Up;
-	private Vector2[] tabPoints;
 
 
 
@@ -151,8 +150,8 @@ public class GeometricVisibility : MonoBehaviour
 		 * ------------------------------------------------------------------------
 		 * 
 		 * 		If the ray & segment intersect, their X & Y components will be the same:
- 		 *		r_px+r_dx*T1 = s_px+s_dx*T2
- 		 *		r_py+r_dy*T1 = s_py+s_dy*T2
+ 		 *		r_px + r_dx * T1 = s_px+s_dx*T2
+ 		 *		r_py  	+ r_dy*T1 = s_py+s_dy*T2
 		 * 
 		 * ------------------------------------------------------------------------ 
 		 * 
@@ -200,7 +199,6 @@ public class GeometricVisibility : MonoBehaviour
 		}
 
 
-		float calcuVal =  (segmentDistance.x * rayDistance.y - segmentDistance.y * rayDistance.x);
 		float t1 = 0, t2 = 0;
 
 
