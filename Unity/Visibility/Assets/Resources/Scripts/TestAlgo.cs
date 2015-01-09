@@ -17,8 +17,14 @@ public class TestAlgo : MonoBehaviour
 	public int nbSegments;
 	public int rayonWidth;
 	public int distanceMaxWall = 20;
+<<<<<<< HEAD
 	public int nbRay;
 	#endregion
+=======
+	public bool optimiseAlgo;
+
+	private bool _algoReady = false;
+>>>>>>> c30843089f68c491ba4cc67e12cfef77e706041b
 	
 	
 	private bool playerMove = false;
@@ -51,6 +57,7 @@ public class TestAlgo : MonoBehaviour
 	#region Unity function
 	void Start () 
 	{
+<<<<<<< HEAD
 		//GUI
 		textFields.Add ("Segments");
 		textFields.Add ("Width seg");
@@ -63,6 +70,12 @@ public class TestAlgo : MonoBehaviour
 		fields.Add ("3");
 
 		init ();
+=======
+		createSegment ();
+		getUniquePoints ();
+		createRay ();
+		_algoReady = true;
+>>>>>>> c30843089f68c491ba4cc67e12cfef77e706041b
 	}
 	// Update is called once per frame
 	void Update () 
@@ -105,8 +118,7 @@ public class TestAlgo : MonoBehaviour
 			segments[i] = seg.randomSegment(distanceMaxWall);
 		}
 	}
-
-	void getAllSegment()
+	void createPolygone()
 	{
 
 	}
@@ -200,6 +212,7 @@ public class TestAlgo : MonoBehaviour
 		return ret;
 	}
 
+<<<<<<< HEAD
 
 	private List <Vector3> getUniquePoints()
 	{
@@ -213,10 +226,25 @@ public class TestAlgo : MonoBehaviour
 		}
 		getAngles (points);
 		return points;
+=======
+	List <Vector2> uniquePoints = new List<Vector2> ();
+
+	private void getUniquePoints()
+	{
+		
+		List <Segment> points = new List<Segment> ();
+
+		for(int i = 0; i < segments.Length; i++) 
+		{
+			uniquePoints.Add(new Vector2(segments[i].pointA.x, segments[i].pointA.z));
+			uniquePoints.Add(new Vector2(segments[i].pointB.x, segments[i].pointB.z));
+		}
+>>>>>>> c30843089f68c491ba4cc67e12cfef77e706041b
 	}
 	
 	private List <double>  getAngles(List <Vector3> pts)
 	{
+<<<<<<< HEAD
 		List <double> angles = new List<double> ();
 		foreach (Vector3 vec in pts) 
 		{
@@ -224,6 +252,9 @@ public class TestAlgo : MonoBehaviour
 		}
 
 		return angles;
+=======
+
+>>>>>>> c30843089f68c491ba4cc67e12cfef77e706041b
 	}
 
 	Intersection startIntersecParametrique (Segment ray, Segment seg)
@@ -256,47 +287,106 @@ public class TestAlgo : MonoBehaviour
 		return null;
 	}
 
+	
 
 	private void drawLine()
 	{
+		List <Intersection>  intersctionList = new List<Intersection> ();
+		List <int> testIndice = new List<int> ();
 		Segment ray = new Segment();
 		Intersection closestIntersec = new Intersection ();
 		Intersection intersec = new Intersection ();
-		List <Intersection>  intersctionList = new List<Intersection> ();
-		List <int> testIndice = new List<int> ();
-		for (int i = 0; i < rays.Length; i++)
+
+
+		if (!optimiseAlgo) 
 		{
-			ray.pointA = playerPosition;
-			ray.pointB = rays[i];
-			//Find closeset intersection
-			closestIntersec = null;
-			for (int j = 0; j < segments.Length; j++)
+			for (int i = 0; i < rays.Length; i++) 
 			{
-				intersec =  startIntersecParametrique(ray, segments[j]);
-				if (intersec == null)
+				ray.pointA = playerPosition;
+				ray.pointB = rays [i];
+				//Find closeset intersection
+				closestIntersec = null;
+
+				for (int j = 0; j < segments.Length; j++) 
 				{
+<<<<<<< HEAD
 					continue;
 				}
 				if (closestIntersec == null || intersec.distance < closestIntersec.distance)
-				{
-					testIndice.Add (i);
-					closestIntersec = intersec;
+=======
+					intersec = startIntersecParametrique (ray, segments [j]);
+
+					if (intersec == null) 
+					{
+						continue;
+					}
+					if (closestIntersec == null || intersec.distance < closestIntersec.distance)
+					{
+							testIndice.Add (i);
+							closestIntersec = intersec;
+					}
 				}
+				intersctionList.Add (closestIntersec);
 			}
-			intersctionList.Add (closestIntersec);
+
+		} 
+		else
+		{
+			float angle ;
+			int cpt = 0;
+			foreach (Vector2 pts in uniquePoints)
+			{
+				Vector2 newVec = new Vector3 ();
+				newVec.x = pts.x - playerPosition.x;
+				newVec.y = pts.y - playerPosition.z;
+
+
+
+				angle = Mathf.Atan2(newVec.y, newVec.x);
+
+				ray.pointB.x = playerPosition.x + rayon * Mathf.Cos(angle);
+				ray.pointB.y = 0;
+				ray.pointB.z = playerPosition.z + rayon * Mathf.Sin(angle);
+
+
+				ray.pointA = playerPosition;
+				//Find closeset intersection
+				closestIntersec = null;
+
+				for (int j = 0; j < segments.Length; j++) 
+>>>>>>> c30843089f68c491ba4cc67e12cfef77e706041b
+				{
+					intersec = startIntersecParametrique (ray, segments [j]);
+					
+					if (intersec == null) 
+					{
+						continue;
+					}
+					if (closestIntersec == null || intersec.distance < closestIntersec.distance)
+					{
+						//testIndice.Add (i);
+						closestIntersec = intersec;
+					}
+				}
+				Debug.Log(closestIntersec);
+				intersctionList.Add (closestIntersec);
+			}
 		}
 
-		Vector3 endPoint = cutSegment();//pointIntersection;//
 
+
+		Vector3 endPoint = cutSegment();//pointIntersection;//
 
 		//DRAW !!!!!!!!!!!!!!!!
 
 		Debug.DrawLine(playerPosition, endPoint, Color.blue, 0f,false);
 
+		//Draw segments
 		if (nbSegments >= 1)
 			for (int i = 0; i < nbSegments; i++)
 				Debug.DrawLine(	segments[i].pointA, segments[i].pointB, Color.green, 0F, false);
 
+		//Draxw rays
 		foreach (Intersection inter in intersctionList)
 		{
 			if (inter != null)
@@ -308,6 +398,8 @@ public class TestAlgo : MonoBehaviour
 			if (!testIndice.Contains(i))
 				Debug.DrawLine (playerPosition, rays [i], Color.white, 0F, false);
 		}
+
+		intersctionList = null;
 	}
 
 	private void updateRay()
