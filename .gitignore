@@ -45,3 +45,12 @@ Temporary Items
 Documentation/Concepts/Medecin/Video/Trauma Team XS Surgery - Waking Heart.avi
 *.mp4
 *.avi
+
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
