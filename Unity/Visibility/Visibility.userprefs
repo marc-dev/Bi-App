@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\TestAlgo.cs">
     <Files>
-      <File FileName="Assets\Resources\Scripts\TestAlgo.cs" Line="324" Column="13" />
+      <File FileName="Assets\Resources\Scripts\TestAlgo.cs" Line="18" Column="1" />
       <File FileName="Assets\Resources\Scripts\VisibilityFader.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\GeometricVisibility.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\Geo\Intersection.cs" Line="1" Column="1" />
