@@ -1,9 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\GeometricVisibility.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\TestAlgo.cs">
     <Files>
-      <File FileName="Assets\Resources\Scripts\GeometricVisibility.cs" Line="663" Column="9" />
-      <File FileName="Assets\Player.cs" Line="49" Column="1" />
+      <File FileName="Assets\Resources\Scripts\TestAlgo.cs" Line="76" Column="3" />
+      <File FileName="Assets\Resources\Scripts\TextureManipulation\ManipulateTexture.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\GeometricVisibility.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\001 Image Decomposer\src\RollOverCube.cs" Line="1" Column="1" />
+      <File FileName="Assets\001 Image Decomposer\src\CreateCube.cs" Line="63" Column="4" />
+      <File FileName="Assets\Resources\Scripts\Geo\Segment.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

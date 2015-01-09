@@ -4,46 +4,66 @@ using System;
 using System.Collections.Generic;
 
 
-//Y = 0 cause we are in 2D
+//Y = 0  2D
 //Axes : X, Z
 
 
 public class TestAlgo : MonoBehaviour 
 {
-	Vector3 playerPosition;
-	Vector3 pointIntersection;
-	Vector3 mousePosition;
-	
-	private bool playerMove;
-	private Vector3[] endPoints;
+	#region variables
 
-	Segment [] segments;
-	Color colorSegement = Color.red;
-
-
+	#region public
 	public bool IntersectionParametrique;
 	public int nbSegments;
-	public int rayon;
+	public int rayonWidth;
 	public int distanceMaxWall = 20;
-
-	private bool _algoReady = false;
-	
-	
 	public int nbRay;
+	#endregion
+	
+	
+	private bool playerMove = false;
+	private bool _algoReady = false;
+
+	private Vector3 playerPosition;
+	private Vector3 pointIntersection;
+	private Vector3 mousePosition;
+
 	private Vector3[] rays;
-	float [] angles;
+	private Vector3[] endPoints;
 
+	private Segment [] segments;
+	private float [] angles;
+		
+	#region GUI
+	private List <String> fields = new List<String>();
+	private List <String> textFields = new List<String>();
+	private int castFields ;
+	private int widthFieldGUI = 60;
+	private int heightFieldGUI = 20;
+	private int topY = 20;
+	private int dY = 40;
+	private int LeftX = 20 ;
+	private Color colorSegement = Color.red;
+	#endregion
 
+	#endregion
 
-	// Use this for initialization
+	#region Unity function
 	void Start () 
 	{
+		//GUI
+		textFields.Add ("Segments");
+		textFields.Add ("Width seg");
+		textFields.Add ("Wdth rayon");
+		textFields.Add ("NB rays");
 
-		createSegment ();
-		createRay ();
-		_algoReady = true;
+		fields.Add ("0");
+		fields.Add ("1");
+		fields.Add ("2");
+		fields.Add ("3");
+
+		init ();
 	}
-	
 	// Update is called once per frame
 	void Update () 
 	{
@@ -54,6 +74,26 @@ public class TestAlgo : MonoBehaviour
 			drawLine ();
 		}
 	}
+
+	#endregion
+
+	private void init(bool changeOnGui = false)
+	{
+		_algoReady = false;
+		if (changeOnGui)
+		{
+			nbSegments = castCharToInt(fields[0]);
+			distanceMaxWall  = castCharToInt(fields[1]);
+			rayonWidth  = castCharToInt(fields[2]);
+			nbRay = castCharToInt(fields[3]);
+		}
+		createSegment ();
+		createRay ();
+		getUniquePoints ();
+		_algoReady = true;
+	}
+	
+
 
 	void createSegment()
 	{
@@ -109,8 +149,6 @@ public class TestAlgo : MonoBehaviour
 			else
 				colorSegement = Color.yellow;
 		}
-		
-
 	}
 
 
@@ -118,12 +156,13 @@ public class TestAlgo : MonoBehaviour
 
 	private void getPositionMouseAndPlayer()
 	{
+		playerMove = false;
+
 		if (true) 
 		{
 			RaycastHit hit;
 			Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hit);
 
-			playerMove = false;
 			if (playerPosition.x != this.gameObject.transform.position.x || playerPosition.z != this.gameObject.transform.position.z)
 		 	{
 				playerPosition.x = this.gameObject.transform.position.x;
@@ -155,21 +194,36 @@ public class TestAlgo : MonoBehaviour
 
 		float angle = Mathf.Atan2(newVec.z, newVec.x);
 	
-		ret.x = playerPosition.x + rayon * Mathf.Cos(angle);
+		ret.x = playerPosition.x + rayonWidth * Mathf.Cos(angle);
 		ret.y = 0;
-		ret.z = playerPosition.z + rayon * Mathf.Sin(angle);
+		ret.z = playerPosition.z + rayonWidth * Mathf.Sin(angle);
 		return ret;
 	}
 
-	private Vector2 [] getUniquePoints()
-	{
-		Vector2 [] points = new Vector2[5]; 
 
+	private List <Vector3> getUniquePoints()
+	{
+		List <Vector3> points = new List <Vector3>(); 
+		for (int i = 0; i < segments.Length; i++) 
+		{
+			if (! ( points.Contains(segments[i].pointA) ) )
+				points.Add(segments[i].pointA);
+			if (! ( points.Contains(segments[i].pointB) ) )
+				points.Add(segments[i].pointB);
+		}
+		getAngles (points);
 		return points;
 	}
-
-	private void getAngles()
+	
+	private List <double>  getAngles(List <Vector3> pts)
 	{
+		List <double> angles = new List<double> ();
+		foreach (Vector3 vec in pts) 
+		{
+			angles.Add(Math.Atan2(vec.z - rayonWidth, vec.x - rayonWidth));
+		}
+
+		return angles;
 	}
 
 	Intersection startIntersecParametrique (Segment ray, Segment seg)
@@ -221,9 +275,6 @@ public class TestAlgo : MonoBehaviour
 				intersec =  startIntersecParametrique(ray, segments[j]);
 				if (intersec == null)
 				{
-
-
-					//Debug.Log("pas ok");
 					continue;
 				}
 				if (closestIntersec == null || intersec.distance < closestIntersec.distance)
@@ -263,29 +314,53 @@ public class TestAlgo : MonoBehaviour
 	{
 		for (int i = 0; i < nbRay; i++)
 		{
-			rays[i].x = playerPosition.x + rayon * Mathf.Cos(angles[i] * Mathf.PI / 180 ); 
+			rays[i].x = playerPosition.x + rayonWidth * Mathf.Cos(angles[i] * Mathf.PI / 180 ); 
 			rays[i].y = 0;
-			rays[i].z = playerPosition.z + rayon * Mathf.Sin(angles[i] * Mathf.PI / 180); 
+			rays[i].z = playerPosition.z + rayonWidth * Mathf.Sin(angles[i] * Mathf.PI / 180); 
 		}
 	}
 
+
+	public bool optimizeAlgo = false;
+
 	private void createRay()
 	{
-		float angle = 360.0f / nbRay;
-
-		rays = new Vector3[nbRay];
-		angles = new float[nbRay];
-
-		for (int i = 0; i < angles.Length; i++)
+		if (optimizeAlgo) 
 		{
-			angles[i] = angle * i;
+			//Ray -> Point segment
+			int cpt = 0;
+			List <double> anglesList = new List<double> ();
+			anglesList = getAngles (getUniquePoints());
+			rays = new Vector3[lengthList(anglesList)];
+			angles = new float[rays.Length];
+			
+			foreach (double ang in anglesList) 
+			{
+				double ang2 = ang * 180 / Mathf.PI;
+				float dx = Mathf.Cos((float)ang2);
+				float dz = Mathf.Sin((float)ang2);
+				angles[cpt] = (float)ang;
+				rays[cpt] = new Vector3(playerPosition.x + dx, 0.0f ,playerPosition.z + dz);
+			}
+		}
+		else 
+		{	
+			//Send 360 rays
+			float angle = 360.0f / nbRay;
+			rays = new Vector3[nbRay];
+			angles = new float[nbRay];
+			for (int i = 0; i < angles.Length; i++)
+			{
+				angles[i] = angle * i;
+			}
+
 		}
 
 		for (int i = 0; i < nbRay; i++)
 		{
-			rays[i].x = playerPosition.x + rayon * Mathf.Cos(angles[i]); 
+			rays[i].x = playerPosition.x + rayonWidth * Mathf.Cos(angles[i]); 
 			rays[i].y = 0;
-			rays[i].z = playerPosition.z + rayon * Mathf.Sin(angles[i]); 
+			rays[i].z = playerPosition.z + rayonWidth * Mathf.Sin(angles[i]); 
 		}
 		
 	}
@@ -295,6 +370,49 @@ public class TestAlgo : MonoBehaviour
 		return new Vector2 (p2.x - p1.x , p2.z - p1.z); 
 	}	
 
+	void OnGUI()
+	{
+		int cpt = 0;
+		foreach (string str in fields) 
+		{
+			string strTemp = str;
+			GUI.Label (new Rect(LeftX, cpt * dY, widthFieldGUI, heightFieldGUI), textFields[cpt]);
+			strTemp = GUI.TextField (new Rect (LeftX + 60, cpt * dY, widthFieldGUI, heightFieldGUI), strTemp);
+			fields[cpt] = strTemp;
+			cpt++;
+		}
 
+		if (GUI.Button (new Rect (LeftX, cpt * dY, 50, 20), "okay")) 
+		{
+			init (true);
+			GUI.FocusControl("nothing");
+		}
 
+	}
+
+	#region utils
+
+	private int castCharToInt(string str)
+	{
+		//Check all char
+		for (int i = 0; i < str.Length; i++)
+		{
+			if ((int)str[i] < 47 && (int)str[i] > 	57)
+			{
+				return 0;
+			}
+		}
+		return Int32.Parse(str);
+	}
+
+	private int lengthList <T>(List<T> l)
+	{
+		int cpt = 0;
+		foreach (T o in l)
+			if (o != null)
+				cpt++;
+		return cpt;
+	}
+
+	#endregion
 }
