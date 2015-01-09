@@ -76,9 +76,9 @@ public class GeometricVisibility : MonoBehaviour
 			this.b.y = pB.z;
 		}
 
-		public string ToString()
+		public string ToStringa()
 		{
-						return "a [" + this.a.x + ", " + this.a.x + "]" + "  b[" + this.b.x + ", " + this.b.y + "]"; 
+			return "a [" + this.a.x + ", " + this.a.x + "]" + "  b[" + this.b.x + ", " + this.b.y + "]"; 
 		}
 	}
 	
