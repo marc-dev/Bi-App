@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\GeometricVisibility.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\TestAlgo.cs">
     <Files>
-      <File FileName="Assets\Resources\Scripts\GeometricVisibility.cs" Line="663" Column="9" />
-      <File FileName="Assets\Player.cs" Line="49" Column="1" />
+      <File FileName="Assets\Resources\Scripts\TestAlgo.cs" Line="202" Column="1" />
+      <File FileName="Assets\Resources\Scripts\VisibilityFader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\GeometricVisibility.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Geo\Intersection.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Geo\Segment.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{DD28F19D-01B6-C7A2-888B-9ABE261B9D8B}</ProjectGuid>
+	<ProjectGuid>{DB91D245-A556-8B5F-19A4-5BB53A7FC93E}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,19 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\Scripts\Geo\Intersection.cs" />
-     <Compile Include="Assets\Resources\Scripts\Geo\Segment.cs" />
-     <Compile Include="Assets\Resources\Scripts\GeometricVisibility.cs" />
-     <Compile Include="Assets\Resources\Scripts\Player.cs" />
-     <Compile Include="Assets\Resources\Scripts\TestAlgo.cs" />
-     <Compile Include="Assets\Resources\Scripts\VisibilityFader.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
      <None Include="Assets\Resources\Shaders\MaskedTexture.shader" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{DB91D245-A556-8B5F-19A4-5BB53A7FC93E}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{3CB81FBD-8E9C-B804-AAED-75C83F2C735B}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
