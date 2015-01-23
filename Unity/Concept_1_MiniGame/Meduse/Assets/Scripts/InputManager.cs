@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour 
 {
-	public GameObject player;
 	public int timeAnimation;
 	public int speed;
 	
