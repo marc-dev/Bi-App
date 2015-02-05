@@ -1,0 +1,652 @@
+fileFormatVersion: 2
+guid: 9ba23daebb2bb7d47a40b5379ed79240
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SharkSprite_0
+    21300002: SharkSprite_1
+    21300004: SharkSprite_2
+    21300006: SharkSprite_3
+    21300008: SharkSprite_4
+    21300010: SharkSprite_5
+    21300012: SharkSprite_6
+    21300014: SharkSprite_7
+    21300016: SharkSprite_8
+    21300018: SharkSprite_9
+    21300020: SharkSprite_10
+    21300022: SharkSprite_11
+    21300024: SharkSprite_12
+    21300026: SharkSprite_13
+    21300028: SharkSprite_14
+    21300030: SharkSprite_15
+    21300032: SharkSprite_16
+    21300034: SharkSprite_17
+    21300036: SharkSprite_18
+    21300038: SharkSprite_19
+    21300040: SharkSprite_20
+    21300042: SharkSprite_21
+    21300044: SharkSprite_22
+    21300046: SharkSprite_23
+    21300048: SharkSprite_24
+    21300050: SharkSprite_25
+    21300052: SharkSprite_26
+    21300054: SharkSprite_27
+    21300056: SharkSprite_28
+    21300058: SharkSprite_29
+    21300060: SharkSprite_30
+    21300062: SharkSprite_31
+    21300064: SharkSprite_32
+    21300066: SharkSprite_33
+    21300068: SharkSprite_34
+    21300070: SharkSprite_35
+    21300072: SharkSprite_36
+    21300074: SharkSprite_37
+    21300076: SharkSprite_38
+    21300078: SharkSprite_39
+    21300080: SharkSprite_40
+    21300082: SharkSprite_41
+    21300084: SharkSprite_42
+    21300086: SharkSprite_43
+    21300088: SharkSprite_44
+    21300090: SharkSprite_45
+    21300092: SharkSprite_46
+    21300094: SharkSprite_47
+    21300096: SharkSprite_48
+    21300098: SharkSprite_49
+    21300100: SharkSprite_50
+    21300102: SharkSprite_51
+    21300104: SharkSprite_52
+    21300106: SharkSprite_53
+    21300108: SharkSprite_54
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SharkSprite_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 910
+        width: 154
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 1019
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_2
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1019
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_3
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1019
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 910
+        width: 154
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_5
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 910
+        width: 155
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_6
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 910
+        width: 159
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_7
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 760
+        width: 154
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_8
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 760
+        width: 155
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_9
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 760
+        width: 155
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_10
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 760
+        width: 162
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 587
+        width: 96
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_12
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 589
+        width: 123
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_13
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 636
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_14
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 571
+        width: 116
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_15
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 633
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_16
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 584
+        width: 93
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_17
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 524
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_18
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 530
+        width: 94
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_19
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 510
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_20
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 572
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_21
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 570
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_22
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 525
+        width: 93
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_23
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 462
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_24
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 473
+        width: 91
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_25
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 512
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 469
+        width: 86
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_27
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 468
+        width: 90
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_28
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 414
+        width: 91
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_29
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 413
+        width: 86
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_30
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 412
+        width: 84
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_31
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 454
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_32
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 456
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_33
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 409
+        width: 91
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_34
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 355
+        width: 91
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_35
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 344
+        width: 87
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_36
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 353
+        width: 89
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_37
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 352
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_38
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 351
+        width: 91
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_39
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 296
+        width: 91
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_40
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 341
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_41
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 294
+        width: 89
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_42
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 338
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_43
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 292
+        width: 91
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_44
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 238
+        width: 96
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_45
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 236
+        width: 197
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_46
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 120
+        width: 96
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_47
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 171
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_48
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 171
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_49
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 171
+        width: 96
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_50
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 171
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_51
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 61
+        width: 97
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_52
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 113
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_53
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 59
+        width: 96
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SharkSprite_54
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 65
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

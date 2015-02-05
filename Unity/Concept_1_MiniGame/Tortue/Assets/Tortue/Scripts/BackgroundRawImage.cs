@@ -13,7 +13,7 @@ public class BackgroundRawImage : MonoBehaviour
 	void Update () 
 	{
 		//_offset = Mathf.Repeat(Time.time * (scrollSpeed + GameManager.instance.speed), 1 );
-		_offset +=  scrollSpeed ;//+ GameManager.instance.speed;
+		_offset +=  scrollSpeed + GameManager.instance.speed;
 		this.gameObject.GetComponent<RawImage>().uvRect = new Rect(_offset / 1000 , 0, 1, 1);/// = new Vector2(_offset, 0);
 		if (_offset > 1000000)
 			_offset = 0;

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 	//We make a static variable to our MusicManager instance
 	public static GameManager instance { get; private set; }
 	
+	
 	public float speed;
 	public int nbMeduse;
 	public int nbMeduseForBoost;

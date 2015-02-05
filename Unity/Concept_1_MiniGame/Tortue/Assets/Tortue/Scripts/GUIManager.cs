@@ -68,7 +68,7 @@ public class GUIManager : MonoBehaviour
 		_distance +=   GameManager.instance.speed;
 		
 		// Division by 100 because distance increase fast
-		return (int) (_distance / 100);
+		return (int) (_distance / 10);
 	}
 	
 	public void updateScore(int score)

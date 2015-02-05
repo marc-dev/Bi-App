@@ -12,7 +12,8 @@ public class PlayerManager : MonoBehaviour
 	
 	private PlayerController _controll;
 	private GUIManager _gui;
-	private const float MAX_SPEED = 0.85f;
+	private const float MAX_SPEED = 10.85f;
+	private float increaseValueSpeed = 0.1f;
 	private int testVar;
 	
 	
@@ -26,6 +27,7 @@ public class PlayerManager : MonoBehaviour
 	public int timeJump;				// timeJump in Fps
 	public float speedJump;				// HeightJump in Pixel
 	private bool _jump;
+	private Vector3 _jumpDirection;
 	
 	
 	#region UnityFunction
@@ -44,7 +46,7 @@ public class PlayerManager : MonoBehaviour
 		if (_jump)
 			movementVertical();
 			
-		else if (this.transform.position.y > -10)
+		else if (this.transform.position.y > - 9.0f)
 			this.transform.position += Vector3.down * Time.deltaTime;
 		
 	}
@@ -52,11 +54,12 @@ public class PlayerManager : MonoBehaviour
 	private void movementVertical()
 	{	
 		_tickJump ++;
-		this.transform.position += Vector3.up * Time.deltaTime * speedJump;
+		this.transform.position += _jumpDirection * Time.deltaTime * speedJump;
 		
-		if (_tickJump >= timeJump || this.transform.position.y >= 0)
+		if (_tickJump >= timeJump || this.transform.position.y >= -0.5f || this.transform.position.y <= -9.5f)
 		{
 			//End jump
+			_jumpDirection = Vector3.zero;
 			_tickJump = 0;
 			_jump = false;
 		}
@@ -67,28 +70,25 @@ public class PlayerManager : MonoBehaviour
 		//Boost accelarate active
 		if (_accelerate)
 		{
-			Debug.Log("_accelerate");
 			if (GameManager.instance.speed < MAX_SPEED)
-				GameManager.instance.speed += 0.01f;
+				GameManager.instance.speed += increaseValueSpeed;
 		}
 		
 		//Slow effect active
 		else if (_slow)
 		{
-			Debug.Log("_slow");
 			if (GameManager.instance.speed > SPEED_INIT / 2)
-				GameManager.instance.speed -= 0.01f;	
+				GameManager.instance.speed -= increaseValueSpeed;	
 		}
 		
 		
 		//After slow or boost effect, set at a steady speed
 		else if (! _slow && !_accelerate && SPEED_INIT != GameManager.instance.speed)
 		{
-			Debug.Log("steady");
 			if ( GameManager.instance.speed < SPEED_INIT)
-				GameManager.instance.speed += 0.01f;
+				GameManager.instance.speed += increaseValueSpeed;
 			else if (GameManager.instance.speed > SPEED_INIT)
-				GameManager.instance.speed -= 0.01f;
+				GameManager.instance.speed -= increaseValueSpeed;
 		}
 	}
 	
@@ -134,7 +134,7 @@ public class PlayerManager : MonoBehaviour
 	//Increase (change background velocity) velocity
 	public void hurryUp()
 	{
-		if (!_accelerate)
+		if (!_accelerate && GameManager.instance.nbMeduse  != 0 && (GameManager.instance.nbMeduse % GameManager.instance.nbMeduseForBoost) == 0)
 		{ //Si le joueur n'utilise pas déjà le boost
 			_accelerate = true;
 			_slow = false;
@@ -189,6 +189,7 @@ public class PlayerManager : MonoBehaviour
 			this.transform.position += direction * Time.deltaTime * timeJump;
 */	
 		_jump = true;
+		_jumpDirection = direction;
 	}
 	#endregion
 	
@@ -202,7 +203,6 @@ public class PlayerManager : MonoBehaviour
 	{
 		
 		yield return new WaitForSeconds(secondes);
-		Debug.Log("after yield");
 		if (type)
 			_accelerate = false;
 		else
@@ -214,8 +214,6 @@ public class PlayerManager : MonoBehaviour
 	#endregion
 	
 
-	
-	
 	
 	#region utils
 	public void msg(string msg)

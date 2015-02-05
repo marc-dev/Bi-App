@@ -1,10 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InputManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Animals\EphyruleBehavior.cs">
     <Files>
-      <File FileName="Assets\Scripts\EphyruleLogic.cs" Line="28" Column="31" />
-      <File FileName="Assets\Scripts\InputManager.cs" Line="43" Column="3" />
-      <File FileName="Assets\Scripts\BackgroundRawImage.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\GameBehavior.cs" Line="70" Column="32" />
+      <File FileName="Assets\Scripts\Animals\EphyruleBehavior.cs" Line="124" Column="10" />
+      <File FileName="Assets\Scripts\Animals\FishBehavior.cs" Line="80" Column="61" />
+      <File FileName="Assets\Scripts\Animals\PlanctonBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Animals\PolypeBehavior.cs" Line="29" Column="91" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

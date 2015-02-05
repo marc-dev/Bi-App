@@ -19,4 +19,13 @@ public class BackgroundRawImage : MonoBehaviour
 			_offset = 0;
 	
 	}
+	
+	
+	
+	public void onTouch()
+	{	
+	
+		//Debug.Log("on touch background");
+		//MainScript._currentEphyrule.goalPosition = new Vector3 (1f, 1f, -21f);
+	}
 }

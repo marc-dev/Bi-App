@@ -1,0 +1,883 @@
+fileFormatVersion: 2
+guid: b45ef0ecc4c92444fab82be8b4219db6
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Yellowfishsprite184x1n3i5q6i6j370w_0
+    21300002: Yellowfishsprite184x1n3i5q6i6j370w_1
+    21300004: Yellowfishsprite184x1n3i5q6i6j370w_2
+    21300006: Yellowfishsprite184x1n3i5q6i6j370w_3
+    21300008: Yellowfishsprite184x1n3i5q6i6j370w_4
+    21300010: Yellowfishsprite184x1n3i5q6i6j370w_5
+    21300012: Yellowfishsprite184x1n3i5q6i6j370w_6
+    21300014: Yellowfishsprite184x1n3i5q6i6j370w_7
+    21300016: Yellowfishsprite184x1n3i5q6i6j370w_8
+    21300018: Yellowfishsprite184x1n3i5q6i6j370w_9
+    21300020: Yellowfishsprite184x1n3i5q6i6j370w_10
+    21300022: Yellowfishsprite184x1n3i5q6i6j370w_11
+    21300024: Yellowfishsprite184x1n3i5q6i6j370w_12
+    21300026: Yellowfishsprite184x1n3i5q6i6j370w_13
+    21300028: Yellowfishsprite184x1n3i5q6i6j370w_14
+    21300030: Yellowfishsprite184x1n3i5q6i6j370w_15
+    21300032: Yellowfishsprite184x1n3i5q6i6j370w_16
+    21300034: Yellowfishsprite184x1n3i5q6i6j370w_17
+    21300036: Yellowfishsprite184x1n3i5q6i6j370w_18
+    21300038: Yellowfishsprite184x1n3i5q6i6j370w_19
+    21300040: Yellowfishsprite184x1n3i5q6i6j370w_20
+    21300042: Yellowfishsprite184x1n3i5q6i6j370w_21
+    21300044: Yellowfishsprite184x1n3i5q6i6j370w_22
+    21300046: Yellowfishsprite184x1n3i5q6i6j370w_23
+    21300048: Yellowfishsprite184x1n3i5q6i6j370w_24
+    21300050: Yellowfishsprite184x1n3i5q6i6j370w_25
+    21300052: Yellowfishsprite184x1n3i5q6i6j370w_26
+    21300054: Yellowfishsprite184x1n3i5q6i6j370w_27
+    21300056: Yellowfishsprite184x1n3i5q6i6j370w_28
+    21300058: Yellowfishsprite184x1n3i5q6i6j370w_29
+    21300060: Yellowfishsprite184x1n3i5q6i6j370w_30
+    21300062: Yellowfishsprite184x1n3i5q6i6j370w_31
+    21300064: Yellowfishsprite184x1n3i5q6i6j370w_32
+    21300066: Yellowfishsprite184x1n3i5q6i6j370w_33
+    21300068: Yellowfishsprite184x1n3i5q6i6j370w_34
+    21300070: Yellowfishsprite184x1n3i5q6i6j370w_35
+    21300072: Yellowfishsprite184x1n3i5q6i6j370w_36
+    21300074: Yellowfishsprite184x1n3i5q6i6j370w_37
+    21300076: Yellowfishsprite184x1n3i5q6i6j370w_38
+    21300078: Yellowfishsprite184x1n3i5q6i6j370w_39
+    21300080: Yellowfishsprite184x1n3i5q6i6j370w_40
+    21300082: Yellowfishsprite184x1n3i5q6i6j370w_41
+    21300084: Yellowfishsprite184x1n3i5q6i6j370w_42
+    21300086: Yellowfishsprite184x1n3i5q6i6j370w_43
+    21300088: Yellowfishsprite184x1n3i5q6i6j370w_44
+    21300090: Yellowfishsprite184x1n3i5q6i6j370w_45
+    21300092: Yellowfishsprite184x1n3i5q6i6j370w_46
+    21300094: Yellowfishsprite184x1n3i5q6i6j370w_47
+    21300096: Yellowfishsprite184x1n3i5q6i6j370w_48
+    21300098: Yellowfishsprite184x1n3i5q6i6j370w_49
+    21300100: Yellowfishsprite184x1n3i5q6i6j370w_50
+    21300102: Yellowfishsprite184x1n3i5q6i6j370w_51
+    21300104: Yellowfishsprite184x1n3i5q6i6j370w_52
+    21300106: Yellowfishsprite184x1n3i5q6i6j370w_53
+    21300108: Yellowfishsprite184x1n3i5q6i6j370w_54
+    21300110: Yellowfishsprite184x1n3i5q6i6j370w_55
+    21300112: Yellowfishsprite184x1n3i5q6i6j370w_56
+    21300114: Yellowfishsprite184x1n3i5q6i6j370w_57
+    21300116: Yellowfishsprite184x1n3i5q6i6j370w_58
+    21300118: Yellowfishsprite184x1n3i5q6i6j370w_59
+    21300120: Yellowfishsprite184x1n3i5q6i6j370w_60
+    21300122: Yellowfishsprite184x1n3i5q6i6j370w_61
+    21300124: Yellowfishsprite184x1n3i5q6i6j370w_62
+    21300126: Yellowfishsprite184x1n3i5q6i6j370w_63
+    21300128: Yellowfishsprite184x1n3i5q6i6j370w_64
+    21300130: Yellowfishsprite184x1n3i5q6i6j370w_65
+    21300132: Yellowfishsprite184x1n3i5q6i6j370w_66
+    21300134: Yellowfishsprite184x1n3i5q6i6j370w_67
+    21300136: Yellowfishsprite184x1n3i5q6i6j370w_68
+    21300138: Yellowfishsprite184x1n3i5q6i6j370w_69
+    21300140: Yellowfishsprite184x1n3i5q6i6j370w_70
+    21300142: Yellowfishsprite184x1n3i5q6i6j370w_71
+    21300144: Yellowfishsprite184x1n3i5q6i6j370w_72
+    21300146: Yellowfishsprite184x1n3i5q6i6j370w_73
+    21300148: Yellowfishsprite184x1n3i5q6i6j370w_74
+    21300150: Yellowfishsprite184x1n3i5q6i6j370w_75
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 653
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 653
+        width: 72
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 654
+        width: 72
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_3
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 654
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 654
+        width: 72
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_5
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 653
+        width: 72
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 605
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_7
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 605
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_8
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 605
+        width: 71
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_9
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 605
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_10
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 605
+        width: 71
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_11
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 605
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_12
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 556
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_13
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 556
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_14
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 556
+        width: 70
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_15
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 556
+        width: 66
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_16
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 556
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_17
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 556
+        width: 67
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_18
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 556
+        width: 70
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_19
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 556
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_20
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 507
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 507
+        width: 72
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_22
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 507
+        width: 69
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_23
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 507
+        width: 67
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_24
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 507
+        width: 64
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_25
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 507
+        width: 67
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_26
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 507
+        width: 70
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_27
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 507
+        width: 72
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_28
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 459
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_29
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 460
+        width: 72
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_30
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 460
+        width: 70
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_31
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 460
+        width: 72
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_32
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 459
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_33
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 411
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_34
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 411
+        width: 71
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_35
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 411
+        width: 69
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_36
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 411
+        width: 72
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_37
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 411
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_38
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 274
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_39
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 274
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_40
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 275
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_41
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 275
+        width: 71
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_42
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 275
+        width: 72
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_43
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 274
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_44
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 225
+        width: 75
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_45
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 225
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_46
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 226
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_47
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 226
+        width: 71
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_48
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 226
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_49
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 225
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_50
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 176
+        width: 75
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_51
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 176
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_52
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 176
+        width: 71
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_53
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 176
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_54
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 176
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_55
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 176
+        width: 67
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_56
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 176
+        width: 70
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_57
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 176
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_58
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 128
+        width: 75
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_59
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 128
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_60
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 128
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_61
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 128
+        width: 67
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_62
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 128
+        width: 65
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_63
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 128
+        width: 67
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_64
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 128
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_65
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 128
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_66
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 80
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_67
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 80
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_68
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 80
+        width: 71
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_69
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 80
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_70
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 80
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_71
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 31
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_72
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 32
+        width: 73
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_73
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 32
+        width: 71
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_74
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 32
+        width: 73
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Yellowfishsprite184x1n3i5q6i6j370w_75
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 31
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

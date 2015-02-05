@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\Meduse\Assets\Scripts\EphyruleLogic.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Concept_2_Tortue\Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js">
     <Files>
-      <File FileName="..\Meduse\Assets\Scripts\EphyruleLogic.cs" Line="28" Column="31" />
+      <File FileName="..\..\Concept_2_Tortue\Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="99" Column="1" />
+      <File FileName="..\..\Concept_2_Tortue\Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" Line="62" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

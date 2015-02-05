@@ -5,6 +5,11 @@ public class InputManager : MonoBehaviour
 {
 	public GameObject player;
 	private PlayerManager _playerManager;
+	private Vector3 _startPositionDrag;
+	private Ray _ray; 
+	private int _distanceCamToObject;
+	
+	private float deltaDrag;
 	
 	// Use this for initialization
 	void Awake () 
@@ -17,6 +22,9 @@ public class InputManager : MonoBehaviour
 		
 		else
 			_playerManager = player.GetComponent<PlayerManager>();
+			
+		deltaDrag = 1.5f;
+		_distanceCamToObject = - 10;
 	}
 	
 	// Update is called once per frame
@@ -34,28 +42,49 @@ public class InputManager : MonoBehaviour
 			//Loop through all the touches on screnn
 			for (int i = 0; i < Input.touchCount; i++)
 			{
+				_ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				
 				//executes this code for cuurent touch (i) on screen
 				if (Input.GetTouch(i).phase == TouchPhase.Began)
 				{
+					_startPositionDrag = _ray.GetPoint(-10f);
 				}
 				if (Input.GetTouch(i).phase == TouchPhase.Ended)
 				{
-					_playerManager.moveplayer(Vector3.up);
+					if ( (_ray.GetPoint(_distanceCamToObject)).x - _startPositionDrag.x  > deltaDrag)
+					{
+						horizontalDrag();
+					}	
+					else if ((_ray.GetPoint(_distanceCamToObject)).y - _startPositionDrag.y  < -deltaDrag)
+					{
+						verticalDrag();
+					}
+					else
+						moveUp();
 					
 				}
-				
-				
-				
 			}
 		}
-	
 	}
 	
-	void OnMouseDrag()
+	private void moveUp()
 	{
-		Debug.Log("dragr"+Time.time);
+		_playerManager.moveplayer(Vector3.up);
+	}
+	
+	private void horizontalDrag()
+	{
+		_playerManager.hurryUp();
+		GameManager.instance.boostReady = false;
 	} 
 	
+	private void verticalDrag()
+	{
+		if (_playerManager.transform.position.y > - 9.0f )
+		{
+			_playerManager.moveplayer(Vector3.down);
+		}
+	} 
 	
 	
 	
@@ -64,6 +93,7 @@ public class InputManager : MonoBehaviour
 		//Boost accelaration
 		if ( (Input.GetKeyUp(KeyCode.RightArrow) ) && GameManager.instance.boostReady)
 		{
+
 			_playerManager.hurryUp();
 			GameManager.instance.boostReady = false;
 			
@@ -86,7 +116,7 @@ public class InputManager : MonoBehaviour
 		//Swim down
 		if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
 		{
-			_playerManager.moveplayer(Vector3.down);//this.transform.position += Vector3.down * Time.deltaTime * speed;
+			_playerManager.moveplayer(Vector3.down);
 		}
 		
 		

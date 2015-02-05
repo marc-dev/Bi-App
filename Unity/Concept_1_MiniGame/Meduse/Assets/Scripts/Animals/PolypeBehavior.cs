@@ -3,42 +3,46 @@ using System.Collections;
 
 public class PolypeBehavior : MonoBehaviour 
 {
-	public GameObject animal;
-	
-	public int hazardCount;
+	public GameObject euphyrule;
+
 	public float spawnWait;
 	public float startWait;
-	public float waveWait;
-	
-	
+	public int maxPolype;	
+
+	private int _nbPolype;
 	private Vector3 spawnPosition ;
 		
 	// Use this for initialization
 	void Start () 
 	{
+		init();
 		StartCoroutine (SpawnWaves ());
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 	
 	IEnumerator SpawnWaves ()
 	{
 		yield return new WaitForSeconds (startWait);
 		
-		while (true)
+		while (_nbPolype < maxPolype)
 		{
-			for (int i = 0; i < hazardCount; i++)
-			{				
-				spawnPosition = new Vector3 (this.transform.position.x, this.transform.position.y , -21);
-				Quaternion spawnRotation = Quaternion.identity;
-				Instantiate (animal, spawnPosition, spawnRotation);
-				yield return new WaitForSeconds (spawnWait);
-			}
-			yield return new WaitForSeconds (waveWait);
-			
+			spawnPosition = new Vector3 (this.transform.position.x, this.transform.position.y , - 2f);
+			Quaternion spawnRotation = Quaternion.identity;
+			Instantiate (euphyrule, spawnPosition, spawnRotation);
+			_nbPolype ++;
+			yield return new WaitForSeconds (spawnWait);
 		}
+		die();
+	}
+
+	private void die()
+	{
+		GameManager.instance.gameBehavior.createPolype();
+		Destroy(this.gameObject);
+	}
+
+	private void init()
+	{
+		_nbPolype = 0;
 	}
 }

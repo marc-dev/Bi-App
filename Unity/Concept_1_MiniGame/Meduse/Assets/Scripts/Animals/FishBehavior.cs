@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FishBehavior : MonoBehaviour 
 {
-
 	public int speed;
+	public Image damage; 
 	
 	private bool _direction;
 	
@@ -15,16 +16,12 @@ public class FishBehavior : MonoBehaviour
 	
 	#region Unity method	
 	
-	void onAnimatorMove()
-	{
-	}
-	
+
 	void Start ()
 	{
 		_transform = this.gameObject.transform;
 		_animator = this.gameObject.GetComponent<Animator>();
-		
-		
+	
 		direction();
 	
 	}
@@ -32,7 +29,7 @@ public class FishBehavior : MonoBehaviour
 	private void direction()
 	{
 		//Choice animation
-		if (_transform.position.x > 6.0f)
+		if (_transform.position.x > 0)
 		{
 			_animator.SetBool("ToTheLeft" , true);
 			speed *= -1;
@@ -44,8 +41,16 @@ public class FishBehavior : MonoBehaviour
 	}
 	// Update is called once per frame
 	void Update () 
-	{
+	{	
 		_transform.position = new Vector3(_transform.position.x + speed * Time.deltaTime , _transform.position.y, _transform.position.z);
+		
+		
+		//+ 2 marge instantiate
+		if (this.gameObject.transform.position.x   < GameManager.instance.botRight.x + 2 || this.gameObject.transform.position.x  > GameManager.instance.upperLeft.x - 2
+		    || this.gameObject.transform.position.y < GameManager.instance.botRight.y - 2|| this.gameObject.transform.position.y >  GameManager.instance.upperLeft.y + 2)
+		{
+		//	die();
+		}
 	}
 
 	
@@ -53,8 +58,12 @@ public class FishBehavior : MonoBehaviour
 	{
 		if (col.gameObject.tag == LayerConst.Ephyrule)
 		{
-			_currentEphyrule = col.gameObject;
 			eat();
+		}
+		
+		if (col.gameObject.tag == LayerConst.BOUNDERY)
+		{
+			die();
 		}
 		
 	}
@@ -65,12 +74,19 @@ public class FishBehavior : MonoBehaviour
 	public void eat()
 	{
 		_animator.SetBool("willEat", true);
+		
+		// ... set the colour of the damageImage to the flash colour.
+		GameManager.instance.gameBehavior.damageImage.color = Color.red;
 		//this.animation = _animator.animation.GetClip("FishEat");
 		
 		
 	}
 	
-		
+	public void die()
+	{
+		Destroy(this.gameObject);
+	}
+	
 				
 	public void endEat()
 	{
