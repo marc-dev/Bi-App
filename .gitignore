@@ -68,6 +68,7 @@ sysinfo.txt
 *.csproj
 *.pidb
 *.suo
+*.sln
 *.sln*
 *.user
 *.unityproj
