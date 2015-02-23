@@ -47,6 +47,7 @@ Documentation/Concepts/Medecin/Video/Trauma Team XS Surgery - Waking Heart.avi
 *.avi
 
 
+
 # =============== #
 # Unity generated #
 # =============== #
@@ -55,6 +56,9 @@ Documentation/Concepts/Medecin/Video/Trauma Team XS Surgery - Waking Heart.avi
 [Bb]uild
 [Ll]ibrary/
 sysinfo.txt
+
+*.wav
+*.apk
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
